@@ -814,23 +814,6 @@
       nav, #scrollProgress { transition: none; }
     }
   </style>
-</head>
-<body>
-<div id="scrollProgress" aria-hidden="true"></div>
-
-<!-- PAGE LOADER -->
-<div id="pageLoader">
-  <div class="loader-bg"></div>
-  <div class="loader-center">
-    <div class="loader-ring loader-ring-outer"></div>
-    <div class="loader-ring loader-ring-inner"></div>
-    <div class="loader-glow"></div>
-    <img src="images/en/logo.png" data-i18n-img alt="MI" class="loader-logo" />
-  </div>
-  <div class="loader-name">Martin Dvořák</div>
-  <div class="loader-sub" data-en="Physiotherapist · Prague" data-cs="Fyzioterapeut · Praha">Physiotherapist · Prague</div>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-</div>
 <style>
   #pageLoader {
     position: fixed; inset: 0; z-index: 9999;
@@ -888,7 +871,7 @@
     width: 72px; height: 72px;
     border-radius: 16px;
     object-fit: contain;
-    filter: brightness(1.15) drop-shadow(0 4px 18px rgba(42,181,206,.35));
+    filter: drop-shadow(0 4px 18px rgba(42,181,206,.35));
     animation: logoPulse 2s ease-in-out infinite alternate;
   }
 
@@ -897,8 +880,7 @@
     font-size: 1.25rem; font-weight: 700;
     color: #0a6c7e;
     letter-spacing: .04em;
-    animation: fadeUp .7s ease both;
-    animation-delay: .15s;
+    
   }
   .loader-sub {
     font-family: 'Inter', sans-serif;
@@ -906,8 +888,7 @@
     letter-spacing: .18em; text-transform: uppercase;
     color: rgba(10,108,126,.5);
     margin-top: .35rem;
-    animation: fadeUp .7s ease both;
-    animation-delay: .25s;
+    
   }
 
   /* progress bar */
@@ -930,6 +911,23 @@
   @keyframes fadeUp    { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
   @keyframes barFill   { from { width:0%; } to { width:100%; } }
 </style>
+</head>
+<body>
+<div id="scrollProgress" aria-hidden="true"></div>
+
+<!-- PAGE LOADER -->
+<div id="pageLoader">
+  <div class="loader-bg"></div>
+  <div class="loader-center">
+    <div class="loader-ring loader-ring-outer"></div>
+    <div class="loader-ring loader-ring-inner"></div>
+    <div class="loader-glow"></div>
+    <svg class="loader-logo" viewBox="0 0 72 72" aria-hidden="true"><defs><linearGradient id="llg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5c78"/><stop offset="1" stop-color="#174a6b"/></linearGradient></defs><rect width="72" height="72" rx="16" fill="url(#llg)"/><circle cx="36" cy="36" r="26" fill="none" stroke="#fff" stroke-width="1.2"/><text x="36" y="45" text-anchor="middle" font-family="DejaVu Serif, Georgia, serif" font-weight="700" font-size="25" fill="#fff">MD</text></svg>
+  </div>
+  <div class="loader-name">Martin Dvořák</div>
+  <div class="loader-sub" data-en="Physiotherapist · Prague" data-cs="Fyzioterapeut · Praha">Physiotherapist · Prague</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
 
 <!-- LANGUAGE SWITCH CURTAIN -->
 <div id="langCurtain" aria-hidden="true">
