@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')}catch(e){}</script>
+  <title>Martin Dvořák – Physiotherapist &amp; Fitness Trainer | Prague</title>
+  <meta name="description" content="Master of physiotherapy, osteopath and licensed IFBB trainer. Spine Center Martin Dvořák – Prague. Book an appointment: +420 601 000 112" />
+  <link rel="preload" as="image" href="images/hero.png" fetchpriority="high" />
+  <link rel="icon" type="image/png" href="images/en/logo.png" data-i18n-img />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #0a6c7e;
+      --green-mid:    #1490a8;
+      --green-light:  #2ab5ce;
+      --green-pale:   #ddf3f7;
+      --green-mist:   #f0fafc;
+      --white:        #ffffff;
+      --gray-light:   #f5fafc;
+      --gray-mid:     #d8eef3;
+      --text-dark:    #0d2a30;
+      --text-body:    #2e5460;
+      --text-muted:   #6a9aaa;
+      --gold:         #b8903a;
+      --gold-light:   #f5e9d0;
+      --shadow-sm:    0 2px 12px rgba(26,92,58,.08);
+      --shadow-md:    0 8px 32px rgba(26,92,58,.12);
+      --shadow-lg:    0 20px 60px rgba(26,92,58,.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-mid);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+      transition: box-shadow .3s;
+    }
+    .nav-links { justify-content: center; flex: 1; }
+    nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-brand {
+      text-decoration: none;
+      display: flex; align-items: center; gap: .65rem;
+      flex-shrink: 0;
+    }
+    .nav-brand-icon {
+      width: 40px; height: 40px;
+      flex-shrink: 0;
+    }
+    .nav-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .nav-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--text-dark); letter-spacing: .01em;
+    }
+    .nav-brand-name span { color: var(--green-deep); }
+    .nav-brand-sub {
+      font-size: .65rem; font-weight: 500;
+      color: var(--text-muted); letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-body);
+      font-size: .875rem; font-weight: 500;
+      letter-spacing: .03em;
+      transition: color .25s;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 1.5px;
+      background: var(--green-deep);
+      border-radius: 2px;
+      transition: width .28s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-links a:hover { color: var(--green-deep); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--green-deep); color: var(--white) !important;
+      padding: .5rem 1.25rem; border-radius: 50px;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: background .2s, transform .2s !important;
+    }
+    .nav-cta:hover { background: var(--green-mid) !important; transform: translateY(-1px); }
+    .nav-cta-desktop { flex-shrink: 0; }
+    .lang-toggle {
+      flex-shrink: 0; margin-left: .75rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 32px; padding: 0;
+      background: var(--white); border: 1.5px solid var(--gray-mid); border-radius: 10px;
+      cursor: pointer; transition: border-color .25s, transform .2s, box-shadow .25s;
+    }
+    .lang-toggle:hover { border-color: var(--gold); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+    .lang-toggle img { width: 24px; height: 16px; object-fit: cover; border-radius: 3px; display: block; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--green-deep); border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--green-mist) 0%, var(--white) 50%, var(--green-pale) 100%);
+      display: flex; align-items: center;
+      padding: 100px 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(74,154,106,.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(26,92,58,.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 200px; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--gold-light); color: var(--gold);
+      font-size: .8rem; font-weight: 600; letter-spacing: .08em;
+      padding: .4rem 1rem; border-radius: 50px;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero-badge::before { content: '✦'; font-size: .65rem; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--text-dark); margin-bottom: 1rem;
+    }
+    .hero h1 em { color: var(--green-deep); font-style: normal; }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--text-muted);
+      margin-bottom: 2rem; max-width: 480px;
+      line-height: 1.8;
+    }
+    .hero-credentials {
+      display: flex; flex-direction: column; gap: .6rem;
+      margin-bottom: 2.5rem;
+    }
+    .credential {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .9rem; color: var(--text-body);
+    }
+    .credential-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--green-pale); color: var(--green-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem; flex-shrink: 0;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--green-deep); color: var(--white);
+      padding: .9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: .95rem;
+      display: inline-flex; align-items: center; gap: .5rem;
+      box-shadow: 0 4px 20px rgba(26,92,58,.3);
+      transition: all .3s;
+    }
+    .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,92,58,.4); }
+    .btn-secondary {
+      border: 2px solid var(--green-deep); color: var(--green-deep);
+      padding: .9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: .95rem;
+      display: inline-flex; align-items: center; gap: .5rem;
+      transition: all .3s;
+    }
+    .btn-secondary:hover { background: var(--green-pale); transform: translateY(-2px); }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero-image-wrap::before { display: none; }
+    .hero-img {
+      width: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      position: relative;
+      bottom: -30px;
+    }
+    .hero-stats {
+      display: none;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--green-deep); }
+    .stat-label { font-size: .75rem; color: var(--text-muted); font-weight: 500; letter-spacing: .04em; }
+    .hero-certif {
+      display: none;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--green-light);
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; color: var(--text-dark);
+      margin-bottom: 1rem; line-height: 1.25;
+    }
+    .section-desc {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 560px; line-height: 1.8;
+    }
+    .section-header { margin-bottom: 3.5rem; }
+
+    /* ── STRIP STATS ── */
+    .strip {
+      background: var(--green-deep); padding: 2.5rem 2rem;
+    }
+    .strip-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+      text-align: center;
+    }
+    .strip-item {}
+    .strip-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--white); line-height: 1;
+    }
+    .strip-label { font-size: .85rem; color: rgba(255,255,255,.7); margin-top: .4rem; font-weight: 500; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--gray-light); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .about-imgs {
+      position: relative; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .about-imgs img {
+      width: 100%; border-radius: 16px;
+      object-fit: cover; height: 220px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s;
+    }
+    .about-imgs img:hover { transform: scale(1.02); }
+    .about-imgs img:first-child { grid-column: 1 / -1; height: 260px; }
+    .about-content p { color: var(--text-body); margin-bottom: 1.2rem; line-height: 1.8; }
+    .about-content p:last-child { margin-bottom: 0; }
+    .about-list {
+      list-style: none; margin: 1.5rem 0;
+      display: flex; flex-direction: column; gap: .6rem;
+    }
+    .about-list li {
+      display: flex; align-items: flex-start; gap: .75rem;
+      font-size: .95rem; color: var(--text-body);
+    }
+    .about-list li::before {
+      content: '✓'; color: var(--green-deep);
+      font-weight: 700; font-size: .9rem; margin-top: .05rem;
+      flex-shrink: 0;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+      justify-items: center;
+    }
+    .service-card {
+      background: var(--white); border: 1px solid var(--gray-mid);
+      border-radius: 20px; overflow: hidden;
+      transition: all .3s; cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--green-pale);
+    }
+    .service-img {
+      width: 100%; height: 200px; object-fit: cover;
+      display: block;
+    }
+    .service-body { padding: 1.5rem; }
+    .service-tag {
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--green-light);
+      margin-bottom: .6rem;
+    }
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--text-dark); margin-bottom: .75rem; line-height: 1.3;
+    }
+    .service-desc { font-size: .875rem; color: var(--text-muted); line-height: 1.7; }
+    .service-bullets { list-style: none; margin-top: .9rem; display: flex; flex-direction: column; gap: .35rem; }
+    .service-bullets li {
+      font-size: .83rem; color: var(--text-body);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .service-bullets li::before { content: '·'; color: var(--green-deep); font-weight: 700; font-size: 1.2rem; line-height: .8; }
+
+    /* ── FITNESS ── */
+    .fitness-section {
+      background: linear-gradient(135deg, var(--green-deep) 0%, #0d3d22 100%);
+      color: var(--white);
+    }
+    .fitness-section .section-label { color: var(--gold); }
+    .fitness-section .section-title { color: var(--white); }
+    .fitness-section .section-desc { color: rgba(255,255,255,.7); }
+    .fitness-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .fitness-img { width: 100%; border-radius: 20px; object-fit: cover; height: 460px; display: block; }
+    .fitness-features { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+    .fitness-feat {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .feat-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(255,255,255,.1); color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .feat-title { font-weight: 600; margin-bottom: .25rem; color: var(--white); }
+    .feat-desc { font-size: .875rem; color: rgba(255,255,255,.65); line-height: 1.6; }
+
+    /* ── GALLERY ── */
+    .gallery { background: var(--gray-light); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 1rem;
+    }
+    .gallery-item {
+      border-radius: 12px; overflow: hidden;
+      position: relative; cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(6) { grid-column: span 2; }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,92,58,.5) 0%, transparent 60%);
+      opacity: 0; transition: opacity .3s;
+    }
+    .gallery-item:hover .overlay { opacity: 1; }
+
+    /* ── CERTIFICATES ── */
+    .certificates { background: var(--white); }
+    .cert-carousel {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem 0;
+      /* show exactly 3 cards: center + one each side */
+      --card-w: 380px;
+      --card-gap: 28px;
+    }
+    .cert-track {
+      display: flex;
+      align-items: center;
+      gap: var(--card-gap);
+      transition: transform .6s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .cert-item {
+      flex: 0 0 var(--card-w);
+      border-radius: 18px; overflow: hidden;
+      border: 2px solid transparent;
+      background: var(--gray-light);
+      cursor: pointer;
+      transition: transform .6s cubic-bezier(.4,0,.2,1),
+                  opacity .6s ease,
+                  filter .6s ease,
+                  box-shadow .6s ease,
+                  border-color .6s ease;
+      opacity: .32;
+      filter: blur(2px) grayscale(25%);
+      transform: scale(.84);
+    }
+    .cert-item.active {
+      opacity: 1;
+      filter: none;
+      transform: scale(1);
+      box-shadow: 0 12px 48px rgba(26,92,58,.18), 0 0 0 2px var(--gold);
+      border-color: var(--gold);
+      cursor: zoom-in;
+    }
+    .cert-item img {
+      width: 100%; display: block;
+      object-fit: contain;
+      height: 420px;
+      background: var(--gray-light);
+    }
+    .cert-wrap {
+      position: relative;
+    }
+    .cert-btn {
+      position: absolute; top: 50%; z-index: 10;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(10,108,126,.35);
+      outline: 4px solid rgba(10,108,126,.08);
+      color: var(--green-deep);
+      cursor: pointer; transition: all .25s;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(10,108,126,.12);
+      font-size: 1rem;
+    }
+    .cert-btn:hover {
+      background: rgba(255,255,255,.95);
+      transform: translateY(-50%) translateY(-2px);
+      box-shadow: 0 4px 16px rgba(10,108,126,.2);
+    }
+    #certPrev { left: calc(50% - 190px - 6px); transform: translateY(-50%) translateX(-100%); }
+    #certNext { right: calc(50% - 190px - 6px); transform: translateY(-50%) translateX(100%); }
+    .cert-nav {
+      display: flex; justify-content: center; align-items: center;
+      gap: 1.25rem; margin-top: 1.5rem;
+    }
+    .cert-dots { display: flex; gap: .45rem; }
+    .cert-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gray-mid); transition: all .3s; cursor: pointer;
+    }
+    .cert-dot.active { background: var(--green-deep); transform: scale(1.35); }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,.88); align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 90vh;
+      border-radius: 12px; object-fit: contain;
+      box-shadow: 0 20px 80px rgba(0,0,0,.5);
+    }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      color: white; font-size: 2rem; cursor: pointer;
+      background: rgba(255,255,255,.1); border: none;
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.2); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--white); }
+    .testi-wrap { position: relative; }
+    .testi-carousel { overflow: hidden; padding: 1rem 0 .5rem; }
+    .testi-track {
+      display: flex; gap: 1.5rem;
+      transition: transform .6s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+    .testimonial-card {
+      flex: 0 0 420px;
+      background: var(--green-mist); border-radius: 20px; padding: 2rem;
+      border: 1px solid var(--green-pale);
+      transition: opacity .6s ease, transform .6s ease, filter .6s ease, box-shadow .6s ease;
+      opacity: .32; transform: scale(.9);
+      filter: blur(2px) grayscale(20%);
+    }
+    .testimonial-card.active {
+      opacity: 1; transform: scale(1);
+      filter: none;
+      box-shadow: var(--shadow-md);
+      border-color: rgba(10,108,126,.2);
+    }
+    .stars { color: var(--gold); font-size: .95rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .testimonial-text { font-size: .95rem; color: var(--text-body); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
+    .testimonial-author { font-weight: 600; color: var(--text-dark); font-size: .9rem; }
+    .testimonial-role { font-size: .8rem; color: var(--text-muted); font-weight: 400; margin-top: .2rem; }
+
+    .testi-btn {
+      position: absolute; top: 50%; z-index: 10;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(10,108,126,.35);
+      outline: 4px solid rgba(10,108,126,.08);
+      color: var(--green-deep);
+      cursor: pointer; transition: all .25s;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(10,108,126,.12);
+    }
+    .testi-btn:hover { background: rgba(255,255,255,.95); box-shadow: 0 4px 16px rgba(10,108,126,.2); }
+    .testi-btn svg { width: 15px; height: 15px; }
+    #testiPrev { left: calc(50% - 210px - 6px); transform: translateY(-50%) translateX(-100%); }
+    #testiNext { right: calc(50% - 210px - 6px); transform: translateY(-50%) translateX(100%); }
+    .testi-nav { display: flex; justify-content: center; gap: .45rem; margin-top: 1.5rem; }
+    .testi-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gray-mid); transition: all .3s; cursor: pointer;
+    }
+    .testi-dot.active { background: var(--green-deep); transform: scale(1.35); }
+
+    /* ── CONDITIONS ── */
+    .conditions { background: var(--green-mist); }
+    .conditions-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;
+    }
+    .condition-chip {
+      background: var(--white); border: 1px solid var(--green-pale);
+      border-radius: 50px; padding: .75rem 1.25rem;
+      text-align: center; font-size: .875rem; font-weight: 500;
+      color: var(--text-body);
+      transition: all .2s;
+    }
+    .condition-chip:hover {
+      background: var(--green-deep); color: var(--white);
+      border-color: var(--green-deep); transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--white); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .contact-info-card {
+      background: var(--green-deep); border-radius: 24px; padding: 3rem;
+      color: var(--white);
+    }
+    .contact-info-card .section-title { color: var(--white); }
+    .contact-info-card .section-label { color: var(--gold); }
+    .contact-items { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+    .contact-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; background: rgba(255,255,255,.12);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; flex-shrink: 0; color: var(--gold);
+    }
+    .contact-item-title { font-weight: 600; margin-bottom: .2rem; color: var(--white); }
+    .contact-item-val { font-size: .9rem; color: rgba(255,255,255,.75); }
+    .contact-channels {
+      display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem;
+    }
+    .channel-pill {
+      background: rgba(255,255,255,.12); color: var(--white);
+      border-radius: 50px; padding: .35rem .9rem;
+      font-size: .8rem; font-weight: 500;
+    }
+    .contact-cta-big {
+      display: block; text-align: center;
+      background: var(--gold); color: var(--white);
+      padding: 1.1rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 1.05rem;
+      margin-top: 2rem; letter-spacing: .02em;
+      box-shadow: 0 6px 24px rgba(184,144,58,.4);
+      transition: all .3s;
+    }
+    .contact-cta-big:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,144,58,.5); }
+    .booking-form {
+      background: var(--gray-light); border-radius: 24px; padding: 3rem;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem;
+      color: var(--text-dark); margin-bottom: .5rem;
+    }
+    .form-subtitle { font-size: .9rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: block; font-size: .85rem; font-weight: 600; color: var(--text-dark); margin-bottom: .4rem; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: .75rem 1rem; border-radius: 12px;
+      border: 1.5px solid var(--gray-mid);
+      font-family: 'Inter', sans-serif; font-size: .9rem;
+      color: var(--text-dark); background: var(--white);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(46,125,82,.1);
+    }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-btn {
+      width: 100%; padding: .9rem; border-radius: 50px;
+      background: var(--green-deep); color: var(--white);
+      font-size: .95rem; font-weight: 700; letter-spacing: .03em;
+      border: none; cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .form-btn:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark); color: rgba(255,255,255,.7);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700; color: var(--white); margin-bottom: .75rem;
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-text { font-size: .875rem; line-height: 1.7; max-width: 320px; }
+    .footer-phone {
+      display: inline-block; margin-top: 1.25rem;
+      color: var(--white); font-size: 1.05rem; font-weight: 600;
+      text-decoration: none; letter-spacing: .03em;
+    }
+    .footer-heading { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--white); margin-bottom: 1.2rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-links a { color: rgba(255,255,255,.65); text-decoration: none; font-size: .875rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px; margin: 1.5rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; flex-wrap: wrap; gap: .5rem;
+    }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed; bottom: 0.75rem; right: 0.75rem; z-index: 999;
+      width: 46px; height: 46px; border-radius: 50%;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(10,108,126,.35);
+      outline: 4px solid rgba(10,108,126,.08);
+      color: var(--green-deep);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(10,108,126,.12);
+      opacity: 0; pointer-events: none;
+      transition: opacity .4s, transform .3s, background .2s, box-shadow .2s;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover {
+      background: rgba(255,255,255,.95);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(10,108,126,.18);
+    }
+    .back-to-top svg { width: 17px; height: 17px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .about-grid { gap: 3rem; }
+      .fitness-grid { gap: 3rem; }
+      .contact-grid { gap: 3rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-cta-desktop { display: none; }
+      .lang-toggle { margin-left: auto; margin-right: .75rem; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 70px; left: 0; right: 0;
+        background: var(--white); padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--gray-mid);
+        box-shadow: var(--shadow-md);
+      }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-image-wrap { order: -1; }
+      .hero-stats { display: none; }
+      .hero-certif { display: none; }
+      .strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .fitness-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .gallery-item:nth-child(6) { grid-column: span 1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 3.5rem 1.25rem; }
+      .strip-inner { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    }
+  </style>
+  <style id="motion-css">
+    /* ── MOTION LAYER: scroll reveals, progress bar, nav, hovers ── */
+    :root { --ease: cubic-bezier(.22, 1, .36, 1); }
+    html.js { scroll-behavior: auto; }
+    .strip-num, .stat-num { font-variant-numeric: tabular-nums; }
+    .about, .fitness-section, .contact { overflow-x: clip; }
+
+    /* scroll progress */
+    #scrollProgress {
+      position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1001;
+      background: linear-gradient(90deg, var(--green-light), var(--gold));
+      transform: scaleX(0); transform-origin: 0 50%;
+      pointer-events: none; will-change: transform;
+    }
+
+    /* navbar */
+    nav { transition: height .45s var(--ease), box-shadow .45s var(--ease), background-color .45s ease; }
+    .nav-links a.active { color: var(--green-deep); }
+    .nav-links a.active::after { width: 100%; }
+    @media (min-width: 769px) {
+      nav.scrolled {
+        height: 60px; background: rgba(255,255,255,.86);
+        -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+      }
+      .nav-brand-icon { transition: transform .45s var(--ease); }
+      nav.scrolled .nav-brand-icon { transform: scale(.88); }
+    }
+
+    /* scroll reveal (hidden states only exist when JS is running) */
+    html.js .rv {
+      opacity: 0; transform: translate3d(0, 30px, 0);
+      transition: opacity .9s var(--ease), transform 1s var(--ease);
+      transition-delay: var(--d, 0ms);
+    }
+    html.js .rv-left  { transform: translate3d(-46px, 0, 0); }
+    html.js .rv-right { transform: translate3d(46px, 0, 0); }
+    html.js .rv-zoom  { transform: translate3d(0, 22px, 0) scale(.94); }
+    html.js .rv.in    { opacity: 1; transform: none; }
+
+    /* hero ambience + parallax */
+    html.js .hero-img { transform: translate3d(0, var(--py, 0px), 0); will-change: transform; }
+    html.js .hero::before { animation: heroDriftA 16s ease-in-out infinite alternate; }
+    html.js .hero::after  { animation: heroDriftB 19s ease-in-out infinite alternate; }
+    html.js .hero-stats, html.js .hero-certif { animation: floatY 6s ease-in-out infinite; }
+    @keyframes heroDriftA { to { transform: translate3d(-40px, 30px, 0) scale(1.1); } }
+    @keyframes heroDriftB { to { transform: translate3d(36px, -26px, 0) scale(1.12); } }
+    @keyframes floatY { 50% { transform: translate3d(0, -8px, 0); } }
+
+    /* hover refinements */
+    .service-card {
+      transition: transform .55s var(--ease), box-shadow .55s var(--ease), border-color .4s ease;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 18px 48px rgba(10,108,126,.16); }
+    .service-img-wrap { overflow: hidden; height: 200px; }
+    .service-img { transition: transform .9s var(--ease); }
+    .service-card:hover .service-img { transform: scale(1.07); }
+
+    .btn-primary, .btn-secondary, .nav-cta, .contact-cta-big, .form-btn {
+      transition: background-color .3s ease, color .3s ease, border-color .3s ease,
+                  box-shadow .4s var(--ease), transform .35s var(--ease) !important;
+    }
+    .btn-primary:active, .btn-secondary:active, .nav-cta:active, .contact-cta-big:active, .form-btn:active {
+      transform: translateY(0) scale(.97); transition-duration: .12s !important;
+    }
+
+    .condition-chip {
+      transition: background-color .35s ease, color .35s ease, border-color .35s ease,
+                  transform .45s var(--ease), box-shadow .45s var(--ease);
+    }
+    .about-imgs img { transition: transform .6s var(--ease), box-shadow .6s var(--ease); }
+    .about-imgs img:hover { transform: translateY(-4px) scale(1.015); box-shadow: var(--shadow-md); }
+    .gallery-item { transition: box-shadow .5s var(--ease); }
+    .gallery-item:hover { box-shadow: var(--shadow-md); }
+    .gallery-item img { transition: transform 1s var(--ease); }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item .overlay { transition: opacity .5s ease; }
+    .feat-icon, .contact-icon { transition: transform .5s var(--ease), background-color .3s ease; }
+    .fitness-feat:hover .feat-icon, .contact-item:hover .contact-icon {
+      transform: scale(1.1) rotate(-4deg); background: rgba(255,255,255,.2);
+    }
+    .channel-pill { transition: background-color .3s ease, transform .4s var(--ease); }
+    .channel-pill:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
+    .back-to-top { transition: opacity .4s ease, transform .4s var(--ease), background .2s, box-shadow .3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero::before, .hero::after, .hero-stats, .hero-certif { animation: none !important; }
+      .service-card:hover, .condition-chip:hover, .about-imgs img:hover, .channel-pill:hover,
+      .service-card:hover .service-img, .gallery-item:hover img,
+      .fitness-feat:hover .feat-icon, .contact-item:hover .contact-icon { transform: none; }
+      nav, #scrollProgress { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<div id="scrollProgress" aria-hidden="true"></div>
+
+<!-- PAGE LOADER -->
+<div id="pageLoader">
+  <div class="loader-bg"></div>
+  <div class="loader-center">
+    <div class="loader-ring loader-ring-outer"></div>
+    <div class="loader-ring loader-ring-inner"></div>
+    <div class="loader-glow"></div>
+    <img src="images/en/logo.png" data-i18n-img alt="MI" class="loader-logo" />
+  </div>
+  <div class="loader-name">Martin Dvořák</div>
+  <div class="loader-sub" data-en="Physiotherapist · Prague" data-cs="Fyzioterapeut · Praha">Physiotherapist · Prague</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+<style>
+  #pageLoader {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: linear-gradient(145deg, #e8f7fb 0%, #f0fafc 50%, #ddf3f7 100%);
+    transition: opacity .65s ease, visibility .65s ease;
+    overflow: hidden;
+  }
+
+  /* subtle noise/texture overlay */
+  #pageLoader::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 70% 20%, rgba(42,181,206,.12) 0%, transparent 55%),
+                      radial-gradient(circle at 20% 80%, rgba(184,144,58,.07) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .loader-center {
+    position: relative;
+    width: 120px; height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+
+  /* outer slow ring */
+  .loader-ring {
+    position: absolute; border-radius: 50%;
+    border: 1.5px solid transparent;
+  }
+  .loader-ring-outer {
+    inset: 0;
+    border-top-color: rgba(42,181,206,.55);
+    border-right-color: rgba(42,181,206,.15);
+    animation: spinRing 2.2s linear infinite;
+  }
+  .loader-ring-inner {
+    inset: 12px;
+    border-top-color: rgba(184,144,58,.7);
+    border-left-color: rgba(184,144,58,.2);
+    animation: spinRing 1.5s linear infinite reverse;
+  }
+
+  /* soft glow behind logo */
+  .loader-glow {
+    position: absolute; inset: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,181,206,.18) 0%, transparent 75%);
+    animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+
+  .loader-logo {
+    position: relative; z-index: 1;
+    width: 72px; height: 72px;
+    border-radius: 16px;
+    object-fit: contain;
+    filter: brightness(1.15) drop-shadow(0 4px 18px rgba(42,181,206,.35));
+    animation: logoPulse 2s ease-in-out infinite alternate;
+  }
+
+  .loader-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: #0a6c7e;
+    letter-spacing: .04em;
+    animation: fadeUp .7s ease both;
+    animation-delay: .15s;
+  }
+  .loader-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: .72rem; font-weight: 500;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(10,108,126,.5);
+    margin-top: .35rem;
+    animation: fadeUp .7s ease both;
+    animation-delay: .25s;
+  }
+
+  /* progress bar */
+  .loader-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: rgba(10,108,126,.08);
+  }
+  .loader-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-light, #2ab5ce), var(--gold, #b8903a));
+    border-radius: 2px;
+    animation: barFill 1.1s cubic-bezier(.4,0,.2,1) forwards;
+  }
+
+  @keyframes spinRing  { to { transform: rotate(360deg); } }
+  @keyframes glowPulse { from { opacity:.4; } to { opacity:1; } }
+  @keyframes logoPulse { from { transform:scale(.96); } to { transform:scale(1.03); } }
+  @keyframes fadeUp    { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  @keyframes barFill   { from { width:0%; } to { width:100%; } }
+</style>
+
+<!-- LANGUAGE SWITCH CURTAIN -->
+<div id="langCurtain" aria-hidden="true">
+  <img src="images/en/logo.png" alt="" class="lc-logo" data-i18n-img />
+  <div class="lc-line"></div>
+</div>
+<style>
+  #langCurtain {
+    position: fixed; inset: 0; z-index: 9998;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(145deg, #e8f7fb 0%, #f0fafc 50%, #ddf3f7 100%);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .3s ease, visibility .3s ease;
+  }
+  #langCurtain.show { opacity: 1; visibility: visible; pointer-events: auto; }
+  .lc-logo {
+    width: 72px; height: 72px; border-radius: 16px; object-fit: contain;
+    filter: drop-shadow(0 4px 18px rgba(42,181,206,.35));
+  }
+  .lc-line {
+    height: 2px; width: 0; margin-top: 1.4rem; border-radius: 2px;
+    background: linear-gradient(90deg, var(--green-light, #2ab5ce), var(--gold, #b8903a));
+  }
+  #langCurtain.show .lc-line { animation: lcExpand .45s cubic-bezier(.4,0,.2,1) forwards; }
+  @keyframes lcExpand { from { width: 0; } to { width: 140px; } }
+  @media (prefers-reduced-motion: reduce) {
+    #langCurtain { transition: none; }
+    #langCurtain.show .lc-line { animation: none; width: 140px; }
+  }
+</style>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-brand">
+    <div class="nav-brand-icon">
+      <img src="images/en/logo.png" data-i18n-img alt="MI Logo" style="width:100%;height:100%;object-fit:contain;border-radius:10px;filter:brightness(1.25);" />
+    </div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">Martin <span>Dvořák</span></div>
+      <div class="nav-brand-sub" data-en="Physiotherapist · Prague" data-cs="Fyzioterapeut · Praha">Physiotherapist · Prague</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" data-en="About me" data-cs="O mně">About me</a></li>
+    <li><a href="#services" data-en="Services" data-cs="Služby">Services</a></li>
+    <li><a href="#fitness" data-en="Fitness" data-cs="Fitness">Fitness</a></li>
+    <li><a href="#gallery" data-en="Gallery" data-cs="Galerie">Gallery</a></li>
+    <li><a href="#certificates" data-en="Certificates" data-cs="Certifikáty">Certificates</a></li>
+    <li><a href="#contact" data-en="Contact" data-cs="Kontakt">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta nav-cta-desktop" data-en="📞 Book an appointment" data-cs="📞 Objednat se">📞 Book an appointment</a>
+  <button class="lang-toggle" id="langBtn" type="button" title="Switch to Czech" aria-label="Switch to Czech"><img id="langFlag" src="https://flagcdn.com/w40/gb.png" alt="English" width="24" height="16" /></button>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-image-wrap">
+      <img src="images/hero.png"
+           alt="Martin Dvořák – physiotherapist" data-alt-en="Martin Dvořák – physiotherapist" data-alt-cs="Martin Dvořák – fyzioterapeut" class="hero-img" fetchpriority="high" decoding="sync" />
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label" data-en="Years of experience" data-cs="Let zkušeností">Years of experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">500+</div>
+          <div class="stat-label" data-en="Satisfied patients" data-cs="Spokojených pacientů">Satisfied patients</div>
+        </div>
+      </div>
+      <div class="hero-certif" data-en="🏅 IFBB licensed trainer" data-cs="🏅 Licencovaný trenér IFBB">🏅 IFBB licensed trainer</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge" data-en="Spine Center · Prague" data-cs="Centrum pro páteř · Praha">Spine Center · Prague</div>
+      <h1 data-en="Expertise that delivers &lt;em&gt;visible results&lt;/em&gt;" data-cs="Odbornost, která přináší &lt;em&gt;viditelné výsledky&lt;/em&gt;">Expertise that delivers <em>visible results</em></h1>
+      <p class="hero-sub" data-en="An individual approach to every patient. Focus on the cause of pain, not just the symptom. Modern physiotherapy, osteopathy and rehabilitation in one place." data-cs="Individuální přístup ke každému pacientovi. Zaměření na příčinu bolesti, nejen na symptom. Moderní fyzioterapie, osteopatie a rehabilitace na jednom místě.">An individual approach to every patient. Focus on the cause of pain, not just the symptom. Modern physiotherapy, osteopathy and rehabilitation in one place.</p>
+      <div class="hero-credentials">
+        <div class="credential">
+          <div class="credential-icon">🎓</div>
+          <span data-en="Master of Physiotherapy – Charles University" data-cs="Magistr fyzioterapie – Univerzita Karlova">Master of Physiotherapy – Charles University</span>
+        </div>
+        <div class="credential">
+          <div class="credential-icon">🦴</div>
+          <span data-en="Osteopath – lumbar spine specialist" data-cs="Osteopat – specialista na bederní páteř">Osteopath – lumbar spine specialist</span>
+        </div>
+        <div class="credential">
+          <div class="credential-icon">🏋️</div>
+          <span data-en="Licensed IFBB fitness trainer" data-cs="Licencovaný fitness trenér IFBB">Licensed IFBB fitness trainer</span>
+        </div>
+        <div class="credential">
+          <div class="credential-icon">🌍</div>
+          <span data-en="International experience and continuous professional development" data-cs="Mezinárodní zkušenosti a neustálé vzdělávání">International experience and continuous professional development</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary" data-en="📞 Book an appointment" data-cs="📞 Objednejte se">📞 Book an appointment</a>
+        <a href="#services" class="btn-secondary" data-en="View services" data-cs="Zobrazit služby">View services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP STATS -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-num">15+</div>
+      <div class="strip-label" data-en="Types of therapy" data-cs="Druhů terapií">Types of therapy</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">+420 601 000 112</div>
+      <div class="strip-label" data-en="Phone for appointments" data-cs="Telefon pro objednání">Phone for appointments</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num">Online</div>
+      <div class="strip-label" data-en="Fitness training also available online" data-cs="Fitness tréninky i online">Fitness training also available online</div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-num" data-en="3–4 days" data-cs="3–4 dny">3–4 days</div>
+      <div class="strip-label" data-en="Appointments in advance" data-cs="Objednání předem">Appointments in advance</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-imgs">
+        <img src="images/en/about-1.jpg" data-i18n-img
+             alt="Martin Dvořák in the clinic" data-alt-en="Martin Dvořák in the clinic" data-alt-cs="Martin Dvořák v ordinaci" />
+        <img src="images/en/about-2.jpg" data-i18n-img
+             alt="Physiotherapy treatment" data-alt-en="Physiotherapy treatment" data-alt-cs="Fyzioterapeutické ošetření" />
+        <img src="images/en/about-3.jpg" data-i18n-img
+             alt="Spine specialist" data-alt-en="Spine specialist" data-alt-cs="Specialista na páteř" />
+      </div>
+      <div class="about-content">
+        <div class="section-label" data-en="About me" data-cs="O mně">About me</div>
+        <h2 class="section-title" data-en="More than a diploma –&lt;br/&gt;responsibility to the patient" data-cs="Víc než diplom –&lt;br/&gt;odpovědnost vůči pacientovi">More than a diploma –<br/>responsibility to the patient</h2>
+        <p data-en="Martin Dvořák, born in 1988 in Prague, has loved sport since childhood. At twenty he chose fitness as a path to health and physical fitness, while completing the Faculty of Medicine at Charles University, majoring in Vocational Physiotherapy." data-cs="Martin Dvořák se narodil v roce 1988 v Praze a od dětství miluje sport. Ve dvaceti letech si zvolil fitness jako cestu ke zdraví a fyzické kondici a zároveň dokončil Lékařskou fakultu Univerzity Karlovy, obor odborný fyzioterapeut.">Martin Dvořák, born in 1988 in Prague, has loved sport since childhood. At twenty he chose fitness as a path to health and physical fitness, while completing the Faculty of Medicine at Charles University, majoring in Vocational Physiotherapy.</p>
+        <p data-en="Through years of continuous training – including a specialization in the lumbar spine at renowned institutions abroad – he has built an approach that combines osteopathy, manual therapy and modern physiotherapy." data-cs="Po letech neustálého vzdělávání – včetně specializace na bederní část páteře v renomovaných zahraničních institucích – vybudoval přístup, který kombinuje osteopatii, manuální terapii a moderní fyzioterapii.">Through years of continuous training – including a specialization in the lumbar spine at renowned institutions abroad – he has built an approach that combines osteopathy, manual therapy and modern physiotherapy.</p>
+        <ul class="about-list">
+          <li data-en="Master of Physiotherapy – Charles University" data-cs="Magistr fyzioterapie – Univerzita Karlova">Master of Physiotherapy – Charles University</li>
+          <li data-en="Osteopath, lumbar spine specialist" data-cs="Osteopat, specialista na bederní páteř">Osteopath, lumbar spine specialist</li>
+          <li data-en="Licensed IFBB bodybuilding and operational fitness trainer" data-cs="Licencovaný trenér IFBB pro bodybuilding a provozní fitness">Licensed IFBB bodybuilding and operational fitness trainer</li>
+          <li data-en="Specialized education at international institutions" data-cs="Specializované vzdělávání v mezinárodních institucích">Specialized education at international institutions</li>
+          <li data-en="Individual approach: examination, diagnosis and therapy plan for every patient" data-cs="Individuální přístup: vyšetření, diagnostika a plán terapie pro každého pacienta">Individual approach: examination, diagnosis and therapy plan for every patient</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="margin-top:.5rem; display:inline-flex;" data-en="Book a consultation" data-cs="Objednat konzultaci">Book a consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section class="conditions">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+      <div class="section-label" data-en="Areas of work" data-cs="Oblasti práce">Areas of work</div>
+      <h2 class="section-title" data-en="We help with the following problems" data-cs="Pomáháme s následujícími potížemi">We help with the following problems</h2>
+    </div>
+    <div class="conditions-grid">
+      <div class="condition-chip" data-en="Lower back pain" data-cs="Bolest dolní části zad">Lower back pain</div>
+      <div class="condition-chip" data-en="Sciatica" data-cs="Ischias">Sciatica</div>
+      <div class="condition-chip" data-en="Neck pain" data-cs="Bolest krku">Neck pain</div>
+      <div class="condition-chip" data-en="Herniated disc" data-cs="Výhřez ploténky">Herniated disc</div>
+      <div class="condition-chip" data-en="Migraines and headaches" data-cs="Migrény a bolesti hlavy">Migraines and headaches</div>
+      <div class="condition-chip" data-en="Vertigo" data-cs="Závratě">Vertigo</div>
+      <div class="condition-chip" data-en="Pain between the shoulder blades" data-cs="Bolest mezi lopatkami">Pain between the shoulder blades</div>
+      <div class="condition-chip" data-en="Tingling in arms and legs" data-cs="Brnění rukou a nohou">Tingling in arms and legs</div>
+      <div class="condition-chip" data-en="Scoliosis in children" data-cs="Skolióza u dětí">Scoliosis in children</div>
+      <div class="condition-chip" data-en="Knee pain" data-cs="Bolest kolena">Knee pain</div>
+      <div class="condition-chip" data-en="Ankle injury" data-cs="Poranění kotníku">Ankle injury</div>
+      <div class="condition-chip" data-en="Elbow pain" data-cs="Bolest lokte">Elbow pain</div>
+      <div class="condition-chip" data-en="Polyneuropathy" data-cs="Polyneuropatie">Polyneuropathy</div>
+      <div class="condition-chip" data-en="Fibromyalgia" data-cs="Fibromyalgie">Fibromyalgia</div>
+      <div class="condition-chip" data-en="Myogeloses" data-cs="Myogelózy">Myogeloses</div>
+      <div class="condition-chip" data-en="Poor posture" data-cs="Špatné držení těla">Poor posture</div>
+      <div class="condition-chip" data-en="Sports injuries" data-cs="Sportovní úrazy">Sports injuries</div>
+      <div class="condition-chip" data-en="Post-operative rehab." data-cs="Pooperační rehab.">Post-operative rehab.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label" data-en="Therapies and treatments" data-cs="Terapie a procedury">Therapies and treatments</div>
+      <h2 class="section-title" data-en="Complete range of services" data-cs="Kompletní nabídka služeb">Complete range of services</h2>
+      <p class="section-desc" data-en="Every therapy is individually tailored – no templated approach, with expert assessment and progress monitoring." data-cs="Každá terapie je přizpůsobena individuálně – bez šablon, s odborným posouzením a sledováním pokroku.">Every therapy is individually tailored – no templated approach, with expert assessment and progress monitoring.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-spine.jpg" data-i18n-img
+             alt="Spine physiotherapy" data-alt-en="Spine physiotherapy" data-alt-cs="Fyzioterapie páteře" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Physiotherapy" data-cs="Fyzioterapie">Physiotherapy</div>
+          <div class="service-title" data-en="Osteopathy and manual spine therapy" data-cs="Osteopatie a manuální terapie páteře">Osteopathy and manual spine therapy</div>
+          <p class="service-desc" data-en="A complete examination of the spine, manipulative techniques, chiropractic and an individual recovery plan." data-cs="Kompletní vyšetření páteře, manipulační techniky, chiropraxe a individuální plán rekonvalescence.">A complete examination of the spine, manipulative techniques, chiropractic and an individual recovery plan.</p>
+          <ul class="service-bullets">
+            <li data-en="Neck, back and lower back pain" data-cs="Bolest krku, zad a beder">Neck, back and lower back pain</li>
+            <li data-en="Sciatica and herniated disc" data-cs="Ischias a výhřez ploténky">Sciatica and herniated disc</li>
+            <li data-en="Deep myofascial technique" data-cs="Hluboká myofasciální technika">Deep myofascial technique</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-vacuum.jpg" data-i18n-img
+             alt="Vacuum therapy" data-alt-en="Vacuum therapy" data-alt-cs="Vakuová terapie" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Physical therapy" data-cs="Fyzikální terapie">Physical therapy</div>
+          <div class="service-title" data-en="Vacuum (cupping) therapy" data-cs="Vakuová terapie (baňkování)">Vacuum (cupping) therapy</div>
+          <p class="service-desc" data-en="Specialized medical devices work deeply – they improve circulation, reduce muscle tension and speed up recovery." data-cs="Specializované lékařské přístroje působí do hloubky – zlepšují krevní oběh, snižují napětí ve svalech a urychlují regeneraci.">Specialized medical devices work deeply – they improve circulation, reduce muscle tension and speed up recovery.</p>
+          <ul class="service-bullets">
+            <li data-en="Quick relief from pain and tension" data-cs="Rychlá úleva od bolesti a napětí">Quick relief from pain and tension</li>
+            <li data-en="Improves local circulation" data-cs="Zlepšuje místní prokrvení">Improves local circulation</li>
+            <li data-en="Speeds up tissue regeneration" data-cs="Urychluje regeneraci tkání">Speeds up tissue regeneration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-lymph-manual.jpg" data-i18n-img
+             alt="Lymphatic drainage" data-alt-en="Lymphatic drainage" data-alt-cs="Lymfatická drenáž" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Premium therapy" data-cs="Prémiová terapie">Premium therapy</div>
+          <div class="service-title" data-en="Manual lymphatic drainage" data-cs="Manuální lymfatická drenáž">Manual lymphatic drainage</div>
+          <p class="service-desc" data-en="A sophisticated therapy that speeds up recovery, reduces swelling and restores a feeling of lightness and vitality." data-cs="Sofistikovaná terapie, která urychluje regeneraci, snižuje otoky a vrací pocit lehkosti a vitality.">A sophisticated therapy that speeds up recovery, reduces swelling and restores a feeling of lightness and vitality.</p>
+          <ul class="service-bullets">
+            <li data-en="Tissue preparation before surgery" data-cs="Příprava tkání před operací">Tissue preparation before surgery</li>
+            <li data-en="Faster reduction of swelling after surgery" data-cs="Rychlejší ústup otoků po operaci">Faster reduction of swelling after surgery</li>
+            <li data-en="Detoxification of the body" data-cs="Detoxikace organismu">Detoxification of the body</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-dry-needling.jpg" data-i18n-img
+             alt="Dry needling" data-alt-en="Dry needling" data-alt-cs="Suchá jehla" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Modern method" data-cs="Moderní metoda">Modern method</div>
+          <div class="service-title" data-en="Dry needling therapy" data-cs="Terapie suchou jehlou">Dry needling therapy</div>
+          <p class="service-desc" data-en="A modern, proven method that quickly and effectively relieves back and muscle pain and chronic complaints." data-cs="Moderní a osvědčená metoda, která rychle a účinně řeší bolesti zad, svalů a chronické potíže.">A modern, proven method that quickly and effectively relieves back and muscle pain and chronic complaints.</p>
+          <ul class="service-bullets">
+            <li data-en="Relaxation of deep muscles" data-cs="Uvolnění hlubokých svalů">Relaxation of deep muscles</li>
+            <li data-en="Reduced pain and inflammation" data-cs="Snížení bolesti a zánětu">Reduced pain and inflammation</li>
+            <li data-en="Increased range of motion" data-cs="Zvětšení rozsahu pohybu">Increased range of motion</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-fango.jpg" data-i18n-img
+             alt="Fango thermal therapy" data-alt-en="Fango thermal therapy" data-alt-cs="Fango termoterapie" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Thermotherapy" data-cs="Termoterapie">Thermotherapy</div>
+          <div class="service-title" data-en="Fango thermal therapy" data-cs="Fango termoterapie">Fango thermal therapy</div>
+          <p class="service-desc" data-en="Natural mineral muds combined with heat – effectively reduce pain and stiffness and speed up regeneration." data-cs="Přírodní minerální bahno v kombinaci s teplem – účinně snižuje bolest a ztuhlost a urychluje regeneraci.">Natural mineral muds combined with heat – effectively reduce pain and stiffness and speed up regeneration.</p>
+          <ul class="service-bullets">
+            <li data-en="Chronic and acute pain" data-cs="Chronické a akutní bolesti">Chronic and acute pain</li>
+            <li data-en="Improves joint mobility" data-cs="Zlepšuje pohyblivost kloubů">Improves joint mobility</li>
+            <li data-en="Natural mineral composition" data-cs="Přírodní minerální složení">Natural mineral composition</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-stone-massage.jpg" data-i18n-img
+             alt="Volcanic stone massage" data-alt-en="Volcanic stone massage" data-alt-cs="Masáž lávovými kameny" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Relaxation" data-cs="Relaxace">Relaxation</div>
+          <div class="service-title" data-en="Volcanic stone massage" data-cs="Masáž lávovými kameny">Volcanic stone massage</div>
+          <p class="service-desc" data-en="Warm volcanic stones relax muscles, reduce pain, improve circulation and restore the energy of body and mind." data-cs="Teplé lávové kameny uvolňují svaly, snižují bolest, zlepšují krevní oběh a obnovují energii těla i mysli.">Warm volcanic stones relax muscles, reduce pain, improve circulation and restore the energy of body and mind.</p>
+          <ul class="service-bullets">
+            <li data-en="Deep muscle relaxation" data-cs="Hluboké svalové uvolnění">Deep muscle relaxation</li>
+            <li data-en="Stress and chronic fatigue" data-cs="Stres a chronická únava">Stress and chronic fatigue</li>
+            <li data-en="Improved circulation" data-cs="Zlepšení krevního oběhu">Improved circulation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-maderotherapy.webp" data-i18n-img
+             alt="Maderotherapy" data-alt-en="Maderotherapy" data-alt-cs="Maderoterapie" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Aesthetic physiotherapy" data-cs="Estetická fyzioterapie">Aesthetic physiotherapy</div>
+          <div class="service-title" data-en="Maderotherapy – anti-cellulite" data-cs="Maderoterapie – proti celulitidě">Maderotherapy – anti-cellulite</div>
+          <p class="service-desc" data-en="Visible reduction of cellulite, improved skin tone and natural detoxification of the body through expertly guided therapy." data-cs="Viditelné snížení celulitidy, zlepšení tonusu pleti a přirozená detoxikace organismu díky odborně vedené terapii.">Visible reduction of cellulite, improved skin tone and natural detoxification of the body through expertly guided therapy.</p>
+          <ul class="service-bullets">
+            <li data-en="Breakdown of fat deposits" data-cs="Rozklad tukových usazenin">Breakdown of fat deposits</li>
+            <li data-en="Body contouring" data-cs="Tvarování těla">Body contouring</li>
+            <li data-en="Combined with lymphatic drainage" data-cs="V kombinaci s lymfatickou drenáží">Combined with lymphatic drainage</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-relax-massage.jpg" data-i18n-img
+             alt="Relax massage" data-alt-en="Relax massage" data-alt-cs="Relaxační masáž" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Massage" data-cs="Masáž">Massage</div>
+          <div class="service-title" data-en="Relax massage" data-cs="Relaxační masáž">Relax massage</div>
+          <p class="service-desc" data-en="Not just a massage – but relief, release and a return of energy. Ideal for stress, tension and everyday fatigue." data-cs="Nejen masáž – ale úleva, uvolnění a návrat energie. Ideální při stresu, napětí a každodenní únavě.">Not just a massage – but relief, release and a return of energy. Ideal for stress, tension and everyday fatigue.</p>
+          <ul class="service-bullets">
+            <li data-en="Tension in the back and neck" data-cs="Napětí v zádech a krku">Tension in the back and neck</li>
+            <li data-en="Stress and mental strain" data-cs="Stres a psychická zátěž">Stress and mental strain</li>
+            <li data-en="General regeneration of the body" data-cs="Celková regenerace organismu">General regeneration of the body</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-kids-gymnastics.jpg" data-i18n-img
+             alt="Corrective exercise for children" data-alt-en="Corrective exercise for children" data-alt-cs="Korektivní cvičení pro děti" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Pediatric physiotherapy" data-cs="Dětská fyzioterapie">Pediatric physiotherapy</div>
+          <div class="service-title" data-en="Corrective exercise for children" data-cs="Korektivní cvičení pro děti">Corrective exercise for children</div>
+          <p class="service-desc" data-en="Expertly guided programs for correct posture, correction of scoliosis and hyperkyphosis – individual and group work." data-cs="Odborně vedené programy pro správné držení těla, korekci skoliózy a hyperkyfózy – individuální i skupinová práce.">Expertly guided programs for correct posture, correction of scoliosis and hyperkyphosis – individual and group work.</p>
+          <ul class="service-bullets">
+            <li data-en="Poor posture and scoliosis" data-cs="Špatné držení těla a skolióza">Poor posture and scoliosis</li>
+            <li data-en="Adapted to age and needs" data-cs="Přizpůsobeno věku a potřebám">Adapted to age and needs</li>
+            <li data-en="Motivating environment" data-cs="Motivující prostředí">Motivating environment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-ankle-rehab.jpg" data-i18n-img
+             alt="Ankle rehabilitation" data-alt-en="Ankle rehabilitation" data-alt-cs="Rehabilitace kotníku" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Rehabilitation" data-cs="Rehabilitace">Rehabilitation</div>
+          <div class="service-title" data-en="Joint rehabilitation and sports injuries" data-cs="Rehabilitace kloubů a sportovní úrazy">Joint rehabilitation and sports injuries</div>
+          <p class="service-desc" data-en="Knee, ankle, elbow – recovery from injuries and post-operative rehabilitation with a safe return to activity." data-cs="Koleno, kotník, loket – zotavení po úrazech a pooperační rehabilitace s bezpečným návratem k aktivitám.">Knee, ankle, elbow – recovery from injuries and post-operative rehabilitation with a safe return to activity.</p>
+          <ul class="service-bullets">
+            <li data-en="Reduced pain and swelling" data-cs="Snížení bolesti a otoku">Reduced pain and swelling</li>
+            <li data-en="Muscle strengthening and proprioception" data-cs="Posílení svalů a propriocepce">Muscle strengthening and proprioception</li>
+            <li data-en="Prevention of re-injury" data-cs="Prevence opětovných úrazů">Prevention of re-injury</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-exercises.jpg" data-i18n-img
+             alt="Physiotherapy exercises" data-alt-en="Physiotherapy exercises" data-alt-cs="Fyzioterapeutická cvičení" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Kinesitherapy" data-cs="Kinezioterapie">Kinesitherapy</div>
+          <div class="service-title" data-en="Physiotherapy exercises and kinesitherapy" data-cs="Fyzioterapeutická cvičení a kinezioterapie">Physiotherapy exercises and kinesitherapy</div>
+          <p class="service-desc" data-en="Active and passive exercises adapted to the patient&#x27;s condition – before and after surgery, as well as in the prevention of chronic pain." data-cs="Aktivní a pasivní cvičení přizpůsobená stavu pacienta – před operací i po ní a také při prevenci chronických bolestí.">Active and passive exercises adapted to the patient's condition – before and after surgery, as well as in the prevention of chronic pain.</p>
+          <ul class="service-bullets">
+            <li data-en="Pre- and post-operative preparation" data-cs="Předoperační a pooperační příprava">Pre- and post-operative preparation</li>
+            <li data-en="Strengthening of spinal stabilizers" data-cs="Posílení stabilizátorů páteře">Strengthening of spinal stabilizers</li>
+            <li data-en="Prevention of degenerative changes" data-cs="Prevence degenerativních změn">Prevention of degenerative changes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img"
+             src="images/en/service-polyneuropathy.jpg" data-i18n-img
+             alt="Polyneuropathy therapy" data-alt-en="Polyneuropathy therapy" data-alt-cs="Terapie polyneuropatie" />
+        <div class="service-body">
+          <div class="service-tag" data-en="Neurorehabilitation" data-cs="Neurorehabilitace">Neurorehabilitation</div>
+          <div class="service-title" data-en="Polyneuropathy and fibromyalgia" data-cs="Polyneuropatie a fibromyalgie">Polyneuropathy and fibromyalgia</div>
+          <p class="service-desc" data-en="Individually tailored therapy for patients with chronic pain, tingling and reduced limb function." data-cs="Individuálně přizpůsobená terapie pro pacienty s chronickou bolestí, brněním a sníženou funkcí končetin.">Individually tailored therapy for patients with chronic pain, tingling and reduced limb function.</p>
+          <ul class="service-bullets">
+            <li data-en="Return of sensation in the limbs" data-cs="Návrat citlivosti v končetinách">Return of sensation in the limbs</li>
+            <li data-en="Reduced tingling and burning" data-cs="Snížení mravenčení a pálení">Reduced tingling and burning</li>
+            <li data-en="Improved quality of life" data-cs="Zlepšení kvality života">Improved quality of life</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FITNESS -->
+<section class="fitness-section" id="fitness">
+  <div class="section-inner">
+    <div class="fitness-grid">
+      <div>
+        <div class="section-label" data-en="Fitness &amp;amp; Training" data-cs="Fitness a trénink">Fitness &amp; Training</div>
+        <h2 class="section-title" data-en="Training based&lt;br/&gt;on medicine" data-cs="Tréninky založené&lt;br/&gt;na medicíně">Training based<br/>on medicine</h2>
+        <p class="section-desc" data-en="A unique blend of physiotherapy and fitness – for safe, expert and effective training tailored to each client&#x27;s health condition and goals." data-cs="Jedinečné spojení fyzioterapie a fitness – pro bezpečné, odborné a účinné tréninky přizpůsobené zdravotnímu stavu a cílům každého klienta.">A unique blend of physiotherapy and fitness – for safe, expert and effective training tailored to each client's health condition and goals.</p>
+        <div class="fitness-features">
+          <div class="fitness-feat">
+            <div class="feat-icon">📊</div>
+            <div>
+              <div class="feat-title" data-en="Body composition analysis" data-cs="Analýza složení těla">Body composition analysis</div>
+              <div class="feat-desc" data-en="A special scale measures muscle mass, body fat and hydration – a complete initial examination is included." data-cs="Speciální váha měří svalovou hmotu, tělesný tuk a hydrataci – kompletní vstupní vyšetření je v ceně.">A special scale measures muscle mass, body fat and hydration – a complete initial examination is included.</div>
+            </div>
+          </div>
+          <div class="fitness-feat">
+            <div class="feat-icon">🥗</div>
+            <div>
+              <div class="feat-title" data-en="Individual nutrition plan" data-cs="Individuální jídelníček">Individual nutrition plan</div>
+              <div class="feat-desc" data-en="Tailored to your goal, lifestyle and health condition – no universal templates." data-cs="Přizpůsobený cíli, životnímu stylu a zdravotnímu stavu – žádné univerzální šablony.">Tailored to your goal, lifestyle and health condition – no universal templates.</div>
+            </div>
+          </div>
+          <div class="fitness-feat">
+            <div class="feat-icon">📈</div>
+            <div>
+              <div class="feat-title" data-en="Check-ups every 15 days" data-cs="Kontroly každých 15 dní">Check-ups every 15 days</div>
+              <div class="feat-desc" data-en="Progress monitoring and adjustment of training and diet as needed – with constant expert support." data-cs="Sledování pokroku a úprava tréninku a stravy podle potřeby – s neustálou odbornou podporou.">Progress monitoring and adjustment of training and diet as needed – with constant expert support.</div>
+            </div>
+          </div>
+          <div class="fitness-feat">
+            <div class="feat-icon">💻</div>
+            <div>
+              <div class="feat-title" data-en="Online and in-person training" data-cs="Online a osobní tréninky">Online and in-person training</div>
+              <div class="feat-desc" data-en="Available in both formats – for beginners and advanced trainees, with special focus on spine health." data-cs="Dostupné v obou formách – pro začátečníky i pokročilé, s důrazem na zdraví páteře.">Available in both formats – for beginners and advanced trainees, with special focus on spine health.</div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" style="margin-top:2rem; background:var(--gold); box-shadow:0 4px 20px rgba(184,144,58,.4);" data-en="Book a trial session" data-cs="Objednat zkušební trénink">Book a trial session</a>
+      </div>
+      <div>
+        <img src="images/en/fitness-training.jpg" data-i18n-img
+             alt="Fitness training with Martin Dvořák" data-alt-en="Fitness training with Martin Dvořák" data-alt-cs="Fitness tréninky s Martinem Dvořákem" class="fitness-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label" data-en="Gallery" data-cs="Galerie">Gallery</div>
+      <h2 class="section-title" data-en="From the clinic" data-cs="Z ordinace">From the clinic</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/en/gallery-1.jpg" data-i18n-img alt="Physiotherapist in Prague" data-alt-en="Physiotherapist in Prague" data-alt-cs="Fyzioterapeut v Praze" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-2.jpg" data-i18n-img alt="Spine treatment" data-alt-en="Spine treatment" data-alt-cs="Ošetření páteře" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-3.jpg" data-i18n-img alt="Clinic" data-alt-en="Clinic" data-alt-cs="Ordinace" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-specialization.jpg" data-i18n-img alt="Specialization" data-alt-en="Specialization" data-alt-cs="Specializace" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-training.jpg" data-i18n-img
+             alt="Continuous training" data-alt-en="Continuous training" data-alt-cs="Neustálé vzdělávání" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-elbow.jpg" data-i18n-img alt="Elbow rehabilitation" data-alt-en="Elbow rehabilitation" data-alt-cs="Rehabilitace lokte" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-lymph.jpg" data-i18n-img alt="Lymphatic drainage" data-alt-en="Lymphatic drainage" data-alt-cs="Lymfatická drenáž" />
+        <div class="overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/en/gallery-4.jpg" data-i18n-img alt="Physiotherapy" data-alt-en="Physiotherapy" data-alt-cs="Fyzioterapie" />
+        <div class="overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="certificates" id="certificates">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+      <div class="section-label" data-en="Education &amp;amp; Training" data-cs="Vzdělání a školení">Education &amp; Training</div>
+      <h2 class="section-title" data-en="Certificates and awards" data-cs="Certifikáty a ocenění">Certificates and awards</h2>
+      <p class="section-desc" style="margin:0 auto;" data-en="Continuous professional development is more than a diploma – it is a responsibility to every patient." data-cs="Neustálé odborné vzdělávání je víc než diplom – je to odpovědnost vůči každému pacientovi.">Continuous professional development is more than a diploma – it is a responsibility to every patient.</p>
+    </div>
+    <div class="cert-wrap">
+    <button class="cert-btn" id="certPrev">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="cert-btn" id="certNext">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="cert-carousel" id="certCarousel">
+      <div class="cert-track" id="certTrack">
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-01.jpg"><img src="images/en/cert-01.jpg" data-i18n-img alt="Certificate" data-alt-en="Certificate" data-alt-cs="Certifikát" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-02.jpg"><img src="images/en/cert-02.jpg" data-i18n-img alt="Certificate 2" data-alt-en="Certificate 2" data-alt-cs="Certifikát 2" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-05.jpg"><img src="images/en/cert-05.jpg" data-i18n-img alt="Certificate 5" data-alt-en="Certificate 5" data-alt-cs="Certifikát 5" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-03.jpg"><img src="images/en/cert-03.jpg" data-i18n-img alt="Certificate 3" data-alt-en="Certificate 3" data-alt-cs="Certifikát 3" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-08.jpg"><img src="images/en/cert-08.jpg" data-i18n-img alt="Certificate 8" data-alt-en="Certificate 8" data-alt-cs="Certifikát 8" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-06.jpg"><img src="images/en/cert-06.jpg" data-i18n-img alt="Certificate 6" data-alt-en="Certificate 6" data-alt-cs="Certifikát 6" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-04.jpg"><img src="images/en/cert-04.jpg" data-i18n-img alt="Certificate 4" data-alt-en="Certificate 4" data-alt-cs="Certifikát 4" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-09.jpg"><img src="images/en/cert-09.jpg" data-i18n-img alt="Certificate 9" data-alt-en="Certificate 9" data-alt-cs="Certifikát 9" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-07.jpg"><img src="images/en/cert-07.jpg" data-i18n-img alt="Certificate 7" data-alt-en="Certificate 7" data-alt-cs="Certifikát 7" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-10.jpg"><img src="images/en/cert-10.jpg" data-i18n-img alt="Certificate 10" data-alt-en="Certificate 10" data-alt-cs="Certifikát 10" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-15.webp"><img src="images/en/cert-15.webp" data-i18n-img alt="Certificate 8b" data-alt-en="Certificate 8b" data-alt-cs="Certifikát 8b" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-11.jpg"><img src="images/en/cert-11.jpg" data-i18n-img alt="Certificate 11" data-alt-en="Certificate 11" data-alt-cs="Certifikát 11" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-12.jpg"><img src="images/en/cert-12.jpg" data-i18n-img alt="Certificate 12" data-alt-en="Certificate 12" data-alt-cs="Certifikát 12" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-13.jpg"><img src="images/en/cert-13.jpg" data-i18n-img alt="Certificate 13" data-alt-en="Certificate 13" data-alt-cs="Certifikát 13" /></div>
+        <div class="cert-item" data-i18n-img data-src="images/en/cert-14.jpg"><img src="images/en/cert-14.jpg" data-i18n-img alt="Certificate 14" data-alt-en="Certificate 14" data-alt-cs="Certifikát 14" /></div>
+      </div>
+    </div>
+    </div>
+    <div class="cert-nav">
+      <div class="cert-dots" id="certDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Certificate enlarged" data-alt-en="Certificate enlarged" data-alt-cs="Certifikát zvětšený" onclick="event.stopPropagation()" />
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+      <div class="section-label" data-en="Patient experiences" data-cs="Zkušenosti pacientů">Patient experiences</div>
+      <h2 class="section-title" data-en="What our patients say" data-cs="Co říkají naši pacienti">What our patients say</h2>
+    </div>
+    <div class="testi-wrap">
+      <button class="testi-btn" id="testiPrev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="testi-btn" id="testiNext">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="testi-carousel" id="testiCarousel">
+        <div class="testi-track" id="testiTrack">
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“After years of lower back pain and sciatica, I finally found the right solution. Martin didn&#x27;t just relieve the pain – he found the cause and worked on it. Results were visible after just a few sessions.”" data-cs="„Po letech bolesti dolní části zad a ischiasu jsem konečně našel správné řešení. Martin nejen zmírnil bolest – našel příčinu a pracoval na ní. Výsledky byly vidět už po několika sezeních.“">“After years of lower back pain and sciatica, I finally found the right solution. Martin didn't just relieve the pain – he found the cause and worked on it. Results were visible after just a few sessions.”</p>
+            <div class="testimonial-author">M.P.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“My daughter had a posture problem and early scoliosis. Corrective exercise showed excellent results in a relatively short time. An expert, patient and dedicated approach – exactly what every parent looks for.”" data-cs="„Moje dcera měla problém s držením těla a počínající skoliózu. Korektivní cvičení přineslo za poměrně krátkou dobu výborné výsledky. Odborný, trpělivý a oddaný přístup, jaký hledá každý rodič.“">“My daughter had a posture problem and early scoliosis. Corrective exercise showed excellent results in a relatively short time. An expert, patient and dedicated approach – exactly what every parent looks for.”</p>
+            <div class="testimonial-author">S.T.</div><div class="testimonial-role" data-en="Mother, Prague" data-cs="Matka, Praha">Mother, Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“For years I had migraines and dizziness whose cause I didn&#x27;t know. After just a few manual therapy treatments, my symptoms decreased significantly. I never believed a physiotherapist could help this much.”" data-cs="„Léta jsem měla migrény a závratě, jejichž příčinu jsem neznala. Po několika ošetřeních manuální terapií se potíže výrazně zmírnily. Nevěřila jsem, že fyzioterapeut může tolik pomoci.“">“For years I had migraines and dizziness whose cause I didn't know. After just a few manual therapy treatments, my symptoms decreased significantly. I never believed a physiotherapist could help this much.”</p>
+            <div class="testimonial-author">J.V.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“I had a knee injury that kept me from training. Thanks to a professional approach and a combination of physiotherapy and training, I returned to full function. I recommend him to every athlete.”" data-cs="„Měl jsem úraz kolena, který mi znemožňoval trénovat. Díky profesionálnímu přístupu a kombinaci fyzioterapie a tréninku jsem se vrátil do plné formy. Doporučuji každému sportovci.“">“I had a knee injury that kept me from training. Thanks to a professional approach and a combination of physiotherapy and training, I returned to full function. I recommend him to every athlete.”</p>
+            <div class="testimonial-author">D.M.</div><div class="testimonial-role" data-en="Recreational athlete" data-cs="Rekreační sportovec">Recreational athlete</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“The tingling in my arm that I had ignored for months disappeared after treatment. An expert explanation of the cause and a clearly defined treatment plan – that is what sets Martin&#x27;s approach apart from everything I had tried before.”" data-cs="„Brnění v ruce, které jsem měsíce ignoroval, po léčbě zmizelo. Odborné vysvětlení příčiny a jasně definovaný plán léčby – to odlišuje Martinův přístup od všeho, co jsem dosud zkoušel.“">“The tingling in my arm that I had ignored for months disappeared after treatment. An expert explanation of the cause and a clearly defined treatment plan – that is what sets Martin's approach apart from everything I had tried before.”</p>
+            <div class="testimonial-author">B.N.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Lymphatic drainage was recommended by my doctor after surgery. Recovery went much faster than I expected. Martin was attentive, professional and always ready to answer any question.”" data-cs="„Lymfatickou drenáž mi po operaci doporučil lékař. Zotavení probíhalo mnohem rychleji, než jsem čekala. Martin byl pozorný, profesionální a vždy ochotný odpovědět na jakoukoli otázku.“">“Lymphatic drainage was recommended by my doctor after surgery. Recovery went much faster than I expected. Martin was attentive, professional and always ready to answer any question.”</p>
+            <div class="testimonial-author">S.D.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Lower back pain followed me for almost a year. After just four therapies I feel like a new person. The individual approach and clear explanation of every step of the therapy – that&#x27;s what I value most.”" data-cs="„Bolest dolní části zad mě provázela téměř rok. Po pouhých čtyřech terapiích se cítím jako nový člověk. Individuální přístup a jasné vysvětlení každého kroku terapie – to si cením nejvíc.“">“Lower back pain followed me for almost a year. After just four therapies I feel like a new person. The individual approach and clear explanation of every step of the therapy – that's what I value most.”</p>
+            <div class="testimonial-author">R.J.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Fitness training with Martin is completely different from anything I had tried before. He always takes care of safety and the condition of the body. The results are visible and my posture has improved dramatically.”" data-cs="„Fitness tréninky s Martinem jsou úplně jiné než cokoli, co jsem dosud zkoušel. Vždy dbá na bezpečnost a stav těla. Výsledky jsou vidět a moje držení těla se dramaticky zlepšilo.“">“Fitness training with Martin is completely different from anything I had tried before. He always takes care of safety and the condition of the body. The results are visible and my posture has improved dramatically.”</p>
+            <div class="testimonial-author">A.K.</div><div class="testimonial-role" data-en="Fitness client" data-cs="Fitness klient">Fitness client</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“I had chronic neck and shoulder pain that lasted for years. After osteopathic treatment I slept without pain for the first time in a long while. I recommend him to everyone suffering from similar problems.”" data-cs="„Měla jsem chronické bolesti krku a ramen, které trvaly roky. Po osteopatické léčbě jsem poprvé po dlouhé době spala bez bolesti. Doporučuji každému, kdo trpí podobnými potížemi.“">“I had chronic neck and shoulder pain that lasted for years. After osteopathic treatment I slept without pain for the first time in a long while. I recommend him to everyone suffering from similar problems.”</p>
+            <div class="testimonial-author">V.M.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Fango therapy and vacuum treatments helped me get rid of back stiffness that had plagued me for years. An expert approach and visible results already after the third session. Every recommendation is deserved.”" data-cs="„Fango terapie a vakuové procedury mi pomohly zbavit se ztuhlosti zad, která mě trápila roky. Odborný přístup a viditelné výsledky už po třetím sezení. Každé doporučení je zasloužené.“">“Fango therapy and vacuum treatments helped me get rid of back stiffness that had plagued me for years. An expert approach and visible results already after the third session. Every recommendation is deserved.”</p>
+            <div class="testimonial-author">N.B.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“After a car accident I had severe neck pain and mobility problems. Martin made an individual recovery plan and within six weeks I was back to a normal life. Thank you for your expertise and dedication.”" data-cs="„Po dopravní nehodě jsem měl silné bolesti krku a problémy s pohyblivostí. Martin vytvořil individuální plán zotavení a během šesti týdnů jsem se vrátil k normálnímu životu. Děkuji za odbornost a oddanost.“">“After a car accident I had severe neck pain and mobility problems. Martin made an individual recovery plan and within six weeks I was back to a normal life. Thank you for your expertise and dedication.”</p>
+            <div class="testimonial-author">Z.P.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Relax massage and volcanic stone massage are an incredible experience. I go once a month as prevention and rest for the body. A professional approach that you feel from the very first moment.”" data-cs="„Relaxační masáž a masáž lávovými kameny jsou neuvěřitelný zážitek. Chodím jednou měsíčně jako prevenci a odpočinek pro tělo. Profesionální přístup, který je cítit od první chvíle.“">“Relax massage and volcanic stone massage are an incredible experience. I go once a month as prevention and rest for the body. A professional approach that you feel from the very first moment.”</p>
+            <div class="testimonial-author">I.S.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Maderotherapy gave excellent results – the skin is firmer, cellulite visibly reduced. Martin explains every step of the procedure and the treatment is fully tailored. I will continue regularly.”" data-cs="„Maderoterapie přinesla výborné výsledky – pleť je pevnější, celulitida viditelně snížená. Martin vysvětluje každý krok procedury a ošetření je plně přizpůsobené. Budu pokračovat pravidelně.“">“Maderotherapy gave excellent results – the skin is firmer, cellulite visibly reduced. Martin explains every step of the procedure and the treatment is fully tailored. I will continue regularly.”</p>
+            <div class="testimonial-author">M.J.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Dry needling therapy was incredibly effective for my chronic back muscle pain. I didn&#x27;t believe in the method, but the results convinced me. Pain I couldn&#x27;t get rid of for months disappeared after just two sessions.”" data-cs="„Terapie suchou jehlou byla neuvěřitelně účinná na mou chronickou bolest zádových svalů. Té metodě jsem nevěřil, ale výsledky mě přesvědčily. Bolest, které jsem se měsíce nemohl zbavit, zmizela po pouhých dvou sezeních.“">“Dry needling therapy was incredibly effective for my chronic back muscle pain. I didn't believe in the method, but the results convinced me. Pain I couldn't get rid of for months disappeared after just two sessions.”</p>
+            <div class="testimonial-author">P.V.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“My son had an ankle injury at a competition. Thanks to fast and expert rehabilitation he returned to training in less than four weeks. Martin was available for all questions throughout the entire process.”" data-cs="„Můj syn si na soutěži poranil kotník. Díky rychlé a odborné rehabilitaci se vrátil k tréninkům za méně než čtyři týdny. Martin byl k dispozici pro všechny otázky po celou dobu.“">“My son had an ankle injury at a competition. Thanks to fast and expert rehabilitation he returned to training in less than four weeks. Martin was available for all questions throughout the entire process.”</p>
+            <div class="testimonial-author" data-en="Father, T.R." data-cs="Otec, T.R.">Father, T.R.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“The diagnosis of polyneuropathy frightened me. Thanks to an individual therapeutic approach, the feeling in my hands returned, the pain is reduced and my quality of life is much better. I warmly recommend it.”" data-cs="„Diagnóza polyneuropatie mě vyděsila. Díky individuálnímu terapeutickému přístupu se mi vrátil cit v rukou, bolest se zmírnila a kvalita života je mnohem lepší. Vřele doporučuji.“">“The diagnosis of polyneuropathy frightened me. Thanks to an individual therapeutic approach, the feeling in my hands returned, the pain is reduced and my quality of life is much better. I warmly recommend it.”</p>
+            <div class="testimonial-author">G.D.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Long hours sitting at the computer led to severe pain between my shoulder blades. After just three treatments I feel like a different person. I also got advice for home exercises that keep me pain-free between therapies.”" data-cs="„Dlouhé sezení u počítače vedlo k silným bolestem mezi lopatkami. Po pouhých třech ošetřeních se cítím jako jiný člověk. Dostal jsem také rady pro cvičení doma, které mě udržují bez bolesti mezi terapiemi.“">“Long hours sitting at the computer led to severe pain between my shoulder blades. After just three treatments I feel like a different person. I also got advice for home exercises that keep me pain-free between therapies.”</p>
+            <div class="testimonial-author">L.K.</div><div class="testimonial-role" data-en="IT professional, Prague" data-cs="IT specialista, Praha">IT professional, Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Fibromyalgia was a daily struggle. Martin&#x27;s approach was careful, gradual and adapted to my condition. The pain is much lower and my energy has returned. I finally feel like myself again.”" data-cs="„Fibromyalgie byla každodenní boj. Martinův přístup byl pečlivý, postupný a přizpůsobený mému stavu. Bolest je mnohem menší a vrátila se mi energie. Konečně se zase cítím sama sebou.“">“Fibromyalgia was a daily struggle. Martin's approach was careful, gradual and adapted to my condition. The pain is much lower and my energy has returned. I finally feel like myself again.”</p>
+            <div class="testimonial-author">O.M.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Manual lymphatic drainage before and after surgery – the difference in recovery was huge. The swelling went down faster than the doctors expected. Professional, precise and with full attention to the patient.”" data-cs="„Manuální lymfatická drenáž před operací i po ní – rozdíl v zotavení byl obrovský. Otoky ustoupily rychleji, než lékaři očekávali. Profesionální, přesné a s plnou pozorností k pacientovi.“">“Manual lymphatic drainage before and after surgery – the difference in recovery was huge. The swelling went down faster than the doctors expected. Professional, precise and with full attention to the patient.”</p>
+            <div class="testimonial-author">K.T.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Martin is the only therapist who clearly explained why it hurts and exactly what we are doing to fix it. He didn&#x27;t just ‘massage’ – he made a real plan and stuck to it. Lower back pain is a thing of the past.”" data-cs="„Martin je jediný terapeut, který mi jasně vysvětlil, proč mě to bolí a co přesně děláme, abychom to vyřešili. Nejen že ‚masíroval‘ – vytvořil skutečný plán a držel se ho. Bolest v bederní části je minulostí.“">“Martin is the only therapist who clearly explained why it hurts and exactly what we are doing to fix it. He didn't just ‘massage’ – he made a real plan and stuck to it. Lower back pain is a thing of the past.”</p>
+            <div class="testimonial-author">C.S.</div><div class="testimonial-role">Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“Kinesitherapy after hip surgery restored my mobility in less time than expected. The exercises were adapted to my pace and progress was gradual but steady. An excellent professional.”" data-cs="„Kinezioterapie po operaci kyčle mi vrátila pohyblivost za kratší dobu, než se očekávalo. Cvičení byla přizpůsobena mému tempu a pokrok byl postupný, ale jistý. Výborný odborník.“">“Kinesitherapy after hip surgery restored my mobility in less time than expected. The exercises were adapted to my pace and progress was gradual but steady. An excellent professional.”</p>
+            <div class="testimonial-author">F.L.</div><div class="testimonial-role" data-en="Retiree, Prague" data-cs="Důchodce, Praha">Retiree, Prague</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text" data-en="“I would recommend Martin to anyone suffering from sciatica. For a year I lived with pain I thought was ‘normal’. After treatment I realized it never had to last so long. Thank you for the change in my quality of life.”" data-cs="„Martina bych doporučila každému, kdo trpí ischiasem. Rok jsem žila s bolestí, o které jsem si myslela, že je ‚normální‘. Po léčbě jsem pochopila, že to vůbec nemuselo trvat tak dlouho. Děkuji za změnu kvality života.“">“I would recommend Martin to anyone suffering from sciatica. For a year I lived with pain I thought was ‘normal’. After treatment I realized it never had to last so long. Thank you for the change in my quality of life.”</p>
+            <div class="testimonial-author">E.N.</div><div class="testimonial-role">Prague</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="testi-nav" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+      <div class="section-label" data-en="Contact" data-cs="Kontakt">Contact</div>
+      <h2 class="section-title" data-en="Book your appointment" data-cs="Objednejte se na termín">Book your appointment</h2>
+      <p class="section-desc" style="margin:0 auto;" data-en="Appointments are booked 3–4 days in advance. The number of appointments is limited. Get in touch in time and take the first step toward a life without pain." data-cs="Termíny se objednávají 3–4 dny předem. Počet termínů je omezený. Ozvěte se včas a udělejte první krok k životu bez bolesti.">Appointments are booked 3–4 days in advance. The number of appointments is limited. Get in touch in time and take the first step toward a life without pain.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <div class="section-label" data-en="Direct contact" data-cs="Přímý kontakt">Direct contact</div>
+        <h3 class="section-title" style="font-size:1.7rem;" data-en="Spine Center&lt;br/&gt;Martin Dvořák" data-cs="Centrum pro páteř&lt;br/&gt;Martin Dvořák">Spine Center<br/>Martin Dvořák</h3>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-item-title" data-en="Phone" data-cs="Telefon">Phone</div>
+              <div class="contact-item-val">+420 601 000 112</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="contact-item-title" data-en="Available via" data-cs="Dostupný přes">Available via</div>
+              <div class="contact-channels">
+                <span class="channel-pill">Viber</span>
+                <span class="channel-pill">WhatsApp</span>
+                <span class="channel-pill">SMS</span>
+                <span class="channel-pill" data-en="Call" data-cs="Hovor">Call</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-item-title" data-en="Location" data-cs="Lokalita">Location</div>
+              <div class="contact-item-val" data-en="Prague, Czechia" data-cs="Praha, Česko">Prague, Czechia</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div>
+              <div class="contact-item-title" data-en="Booking" data-cs="Objednávání">Booking</div>
+              <div class="contact-item-val" data-en="Appointments 3–4 days in advance.&lt;br/&gt;Send a message and I will get back to you personally." data-cs="Termíny 3–4 dny předem.&lt;br/&gt;Pošlete zprávu a ozvu se vám osobně.">Appointments 3–4 days in advance.<br/>Send a message and I will get back to you personally.</div>
+            </div>
+          </div>
+        </div>
+        <a href="tel:+420601000112" class="contact-cta-big" data-en="📞 Call: +420 601 000 112" data-cs="📞 Zavolejte: +420 601 000 112">📞 Call: +420 601 000 112</a>
+      </div>
+
+      <div class="booking-form">
+        <div class="form-title" data-en="Send an inquiry" data-cs="Odeslat dotaz">Send an inquiry</div>
+        <div class="form-subtitle" data-en="Fill in the form and we will get back to you as soon as possible" data-cs="Vyplňte formulář a ozveme se vám co nejdříve">Fill in the form and we will get back to you as soon as possible</div>
+        <form onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label class="form-label" data-en="Full name" data-cs="Jméno a příjmení">Full name</label>
+            <input type="text" class="form-input" placeholder="Your full name" data-ph-en="Your full name" data-ph-cs="Vaše jméno a příjmení" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-en="Phone number" data-cs="Telefonní číslo">Phone number</label>
+            <input type="tel" class="form-input" placeholder="Your phone number" data-ph-en="Your phone number" data-ph-cs="Vaše telefonní číslo" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-en="Type of therapy / complaint" data-cs="Druh terapie / potíže">Type of therapy / complaint</label>
+            <select class="form-select">
+              <option value="" data-en="Choose a service..." data-cs="Vyberte službu...">Choose a service...</option>
+              <option data-en="Spine physiotherapy and osteopathy" data-cs="Fyzioterapie páteře a osteopatie">Spine physiotherapy and osteopathy</option>
+              <option data-en="Vacuum (cupping) therapy" data-cs="Vakuová terapie (baňkování)">Vacuum (cupping) therapy</option>
+              <option data-en="Lymphatic drainage" data-cs="Lymfatická drenáž">Lymphatic drainage</option>
+              <option data-en="Dry needling" data-cs="Suchá jehla">Dry needling</option>
+              <option data-en="Fango thermal therapy" data-cs="Fango termoterapie">Fango thermal therapy</option>
+              <option data-en="Volcanic stone massage" data-cs="Masáž lávovými kameny">Volcanic stone massage</option>
+              <option data-en="Maderotherapy" data-cs="Maderoterapie">Maderotherapy</option>
+              <option data-en="Relax massage" data-cs="Relaxační masáž">Relax massage</option>
+              <option data-en="Corrective exercise for children" data-cs="Korektivní cvičení pro děti">Corrective exercise for children</option>
+              <option data-en="Rehabilitation of sports injuries" data-cs="Rehabilitace sportovních úrazů">Rehabilitation of sports injuries</option>
+              <option data-en="Fitness training" data-cs="Fitness tréninky">Fitness training</option>
+              <option data-en="Other / Consultation" data-cs="Jiné / Konzultace">Other / Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-en="Short description of your complaint (optional)" data-cs="Stručný popis potíží (nepovinné)">Short description of your complaint (optional)</label>
+            <textarea class="form-textarea" placeholder="Describe your problem or question..." data-ph-en="Describe your problem or question..." data-ph-cs="Popište svůj problém nebo dotaz..."></textarea>
+          </div>
+          <button type="submit" class="form-btn" data-en="Send inquiry →" data-cs="Odeslat dotaz →">Send inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Martin <span>Dvořák</span></div>
+      <p class="footer-text" data-en="Spine Center in Prague. Expertise, experience and an individual approach in physiotherapy, osteopathy, rehabilitation and fitness." data-cs="Centrum pro páteř v Praze. Odbornost, zkušenosti a individuální přístup v oblasti fyzioterapie, osteopatie, rehabilitace a fitness.">Spine Center in Prague. Expertise, experience and an individual approach in physiotherapy, osteopathy, rehabilitation and fitness.</p>
+      <a href="tel:+420601000112" class="footer-phone">📞 +420 601 000 112</a>
+    </div>
+    <div>
+      <div class="footer-heading" data-en="Services" data-cs="Služby">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services" data-en="Osteopathy and manual therapy" data-cs="Osteopatie a manuální terapie">Osteopathy and manual therapy</a></li>
+        <li><a href="#services" data-en="Vacuum therapy" data-cs="Vakuová terapie">Vacuum therapy</a></li>
+        <li><a href="#services" data-en="Lymphatic drainage" data-cs="Lymfatická drenáž">Lymphatic drainage</a></li>
+        <li><a href="#services" data-en="Dry needling" data-cs="Suchá jehla">Dry needling</a></li>
+        <li><a href="#services" data-en="Injury rehabilitation" data-cs="Rehabilitace úrazů">Injury rehabilitation</a></li>
+        <li><a href="#fitness" data-en="Fitness training" data-cs="Fitness tréninky">Fitness training</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading" data-en="Navigation" data-cs="Navigace">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#hero" data-en="Home" data-cs="Domů">Home</a></li>
+        <li><a href="#about" data-en="About me" data-cs="O mně">About me</a></li>
+        <li><a href="#services" data-en="Services" data-cs="Služby">Services</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-cs="Galerie">Gallery</a></li>
+        <li><a href="#contact" data-en="Contact" data-cs="Kontakt">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-en="© 2025 Martin Dvořák – Spine Center, Prague" data-cs="© 2025 Martin Dvořák – Centrum pro páteř, Praha">© 2025 Martin Dvořák – Spine Center, Prague</span>
+    <span data-en="Physiotherapist · Osteopath · IFBB trainer" data-cs="Fyzioterapeut · Osteopat · trenér IFBB">Physiotherapist · Osteopath · IFBB trainer</span>
+  </div>
+</footer>
+
+
+<script>
+
+  // ── i18n (English default, Czech second) ──
+  const I18N = {
+    en: {
+      title: 'Martin Dvořák – Physiotherapist & Fitness Trainer | Prague',
+      desc: 'Master of physiotherapy, osteopath and licensed IFBB trainer. Spine Center Martin Dvořák – Prague. Book an appointment: +420 601 000 112',
+      formOk: '✓ Inquiry sent! We will get back to you soon.',
+      formBtn: 'Send inquiry →',
+      langTitle: 'Switch to Czech',
+      flag: 'https://flagcdn.com/w40/gb.png',
+      flagAlt: 'English'
+    },
+    cs: {
+      title: 'Martin Dvořák – Fyzioterapeut a fitness trenér | Praha',
+      desc: 'Magistr fyzioterapie, osteopat a licencovaný trenér IFBB. Centrum pro páteř Martin Dvořák – Praha. Objednejte se: +420 601 000 112',
+      formOk: '✓ Dotaz byl odeslán! Brzy se vám ozveme.',
+      formBtn: 'Odeslat dotaz →',
+      langTitle: 'Přepnout do angličtiny',
+      flag: 'https://flagcdn.com/w40/cz.png',
+      flagAlt: 'Čeština'
+    }
+  };
+  let currentLang = 'en';
+  function t(key) { return I18N[currentLang][key]; }
+
+  // ── language-specific images (images/en/* <-> images/cs/*) ──
+  function i18nImgUrl(el, l) {
+    const attr = el.hasAttribute('data-src') ? 'data-src' : (el.tagName === 'LINK' ? 'href' : 'src');
+    return { attr, url: el.getAttribute(attr).replace(/images\/(en|cs)\//, 'images/' + l + '/') };
+  }
+  function langImageUrls(l) {
+    const set = new Set();
+    document.querySelectorAll('[data-i18n-img]').forEach(el => set.add(i18nImgUrl(el, l).url));
+    return Array.from(set);
+  }
+  function preloadLangImages(l) {
+    const jobs = langImageUrls(l).map(u => new Promise(res => {
+      const im = new Image();
+      im.onload = im.onerror = () => res();
+      im.src = u;
+    }));
+    return Promise.race([Promise.all(jobs), new Promise(res => setTimeout(res, 2500))]);
+  }
+  function swapLangImages(l) {
+    document.querySelectorAll('[data-i18n-img]').forEach(el => {
+      const r = i18nImgUrl(el, l);
+      if (el.getAttribute(r.attr) !== r.url) el.setAttribute(r.attr, r.url);
+    });
+  }
+
+  function applyLang(l) {
+    currentLang = l;
+    const d = I18N[l];
+    document.documentElement.lang = l;
+    document.title = d.title;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', d.desc);
+    document.querySelectorAll('[data-en][data-cs]').forEach(el => {
+      if (el.classList.contains('form-btn') && el.disabled) return;
+      el.innerHTML = el.getAttribute('data-' + l);
+    });
+    swapLangImages(l);
+    document.querySelectorAll('[data-alt-en]').forEach(el => el.alt = el.getAttribute('data-alt-' + l));
+    document.querySelectorAll('[data-ph-en]').forEach(el => el.placeholder = el.getAttribute('data-ph-' + l));
+    document.querySelectorAll('[data-aria-en]').forEach(el => el.setAttribute('aria-label', el.getAttribute('data-aria-' + l)));
+    const btn = document.getElementById('langBtn');
+    const flag = document.getElementById('langFlag');
+    btn.title = d.langTitle;
+    btn.setAttribute('aria-label', d.langTitle);
+    flag.src = d.flag;
+    flag.alt = d.flagAlt;
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  let langBusy = false;
+  document.getElementById('langBtn').addEventListener('click', () => {
+    if (langBusy) return;
+    langBusy = true;
+    const next = currentLang === 'en' ? 'cs' : 'en';
+    const curtain = document.getElementById('langCurtain');
+    curtain.classList.remove('show');
+    void curtain.offsetWidth; // restart the line animation
+    curtain.classList.add('show');
+    const minWait = new Promise(res => setTimeout(res, 350));
+    Promise.all([minWait, preloadLangImages(next)]).then(() => {
+      applyLang(next);
+      try { localStorage.setItem('lang', next); } catch (e) {}
+      setTimeout(() => {
+        curtain.classList.remove('show');
+        langBusy = false;
+      }, 250);
+    });
+  });
+  try {
+    if (localStorage.getItem('lang') === 'cs') applyLang('cs');
+  } catch (e) {}
+
+  // Page loader – hide after 1.2s regardless of image load state
+  (function() {
+    const loader = document.getElementById('pageLoader');
+    function hideLoader() {
+      loader.style.opacity = '0';
+      loader.style.visibility = 'hidden';
+      if (!window.__pageReady) {
+        window.__pageReady = true;
+        window.dispatchEvent(new Event('pageReady'));
+      }
+    }
+    // keep the loader up until the hero image is decoded, so the hero is fully drawn when the page appears
+    const hero = document.querySelector('.hero-img');
+    const heroReady = hero && hero.decode ? hero.decode().catch(() => {}) : Promise.resolve();
+    const minWait = new Promise(r => setTimeout(r, 1200));
+    const maxWait = new Promise(r => setTimeout(r, 4000));
+    Promise.race([Promise.all([minWait, heroReady]), maxWait]).then(hideLoader);
+  })();
+
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Form
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-btn');
+    btn.textContent = t('formOk');
+    btn.style.background = '#2e7d52';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = t('formBtn');
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+
+  // ── CERTIFICATE CAROUSEL ──
+  (function() {
+    const carousel = document.getElementById('certCarousel');
+    const track    = document.getElementById('certTrack');
+    const items    = Array.from(track.querySelectorAll('.cert-item'));
+    const dotsWrap = document.getElementById('certDots');
+    const AUTO_MS  = 4500;
+    let current = 0, autoTimer;
+
+    // Build dots
+    items.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'cert-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(d);
+    });
+
+    function go(idx) {
+      current = (idx + items.length) % items.length;
+
+      items.forEach((el, i) => el.classList.toggle('active', i === current));
+      dotsWrap.querySelectorAll('.cert-dot')
+              .forEach((d, i) => d.classList.toggle('active', i === current));
+
+      // offsetWidth = layout width, unaffected by CSS scale transform
+      const cardW = items[0].offsetWidth;
+      const gap   = parseFloat(getComputedStyle(track).columnGap ||
+                               getComputedStyle(track).gap) || 28;
+      const step  = cardW + gap;
+
+      // Shift track so center of card[current] lands on center of carousel
+      const offset = carousel.offsetWidth / 2 - (current * step + cardW / 2);
+      track.style.transform = `translateX(${offset}px)`;
+
+      resetAuto();
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => go(current + 1), AUTO_MS);
+    }
+
+    items.forEach(el => {
+      el.addEventListener('click', () => {
+        if (el.classList.contains('active')) openLightbox(el.dataset.src);
+        else go(items.indexOf(el));
+      });
+    });
+
+    document.getElementById('certPrev').addEventListener('click', () => go(current - 1));
+    document.getElementById('certNext').addEventListener('click', () => go(current + 1));
+
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', resetAuto);
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => go(current));
+
+    go(0);
+  })();
+
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ── TESTIMONIALS CAROUSEL ──
+  (function() {
+    const carousel = document.getElementById('testiCarousel');
+    const track    = document.getElementById('testiTrack');
+    const cards    = Array.from(track.querySelectorAll('.testimonial-card'));
+    const dotsWrap = document.getElementById('testiDots');
+    const AUTO_MS  = 5000;
+    let current = 0, autoTimer;
+
+    cards.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(d);
+    });
+
+    function go(idx) {
+      current = (idx + cards.length) % cards.length;
+      cards.forEach((el, i) => el.classList.toggle('active', i === current));
+      dotsWrap.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+
+      const cardW = cards[0].offsetWidth;
+      const gap   = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 24;
+      const step  = cardW + gap;
+      const offset = carousel.offsetWidth / 2 - (current * step + cardW / 2);
+      track.style.transform = `translateX(${offset}px)`;
+      resetAuto();
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => go(current + 1), AUTO_MS);
+    }
+
+    document.getElementById('testiPrev').addEventListener('click', () => go(current - 1));
+    document.getElementById('testiNext').addEventListener('click', () => go(current + 1));
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', resetAuto);
+    window.addEventListener('resize', () => go(current));
+
+    go(0);
+  })();
+</script>
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" data-aria-en="Back to top" data-aria-cs="Zpět nahoru">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+<script>
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400));
+</script>
+<script>
+// ── MOTION: scroll reveal, hero entrance, parallax, progress, active nav, smooth anchors, count-up ──
+(function () {
+  const doc = document.documentElement;
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MOTION = doc.classList.contains('js') && !REDUCED;
+  const raf = window.requestAnimationFrame.bind(window);
+  const nav = document.getElementById('navbar');
+  const bar = document.getElementById('scrollProgress');
+  const heroImg = document.querySelector('.hero-img');
+
+  // wrap card images so hover-zoom stays clipped inside the image area
+  document.querySelectorAll('.service-img').forEach(img => {
+    const w = document.createElement('div');
+    w.className = 'service-img-wrap';
+    img.parentNode.insertBefore(w, img);
+    w.appendChild(img);
+  });
+
+  // ── scroll-driven: progress bar, hero parallax, active nav link ──
+  const linkPairs = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'))
+    .map(a => ({ a, sec: document.querySelector(a.getAttribute('href')) }))
+    .filter(p => p.sec && p.a.getAttribute('href').length > 1);
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const y = window.pageYOffset || doc.scrollTop || 0;
+    const max = doc.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0).toFixed(4) + ')';
+    if (MOTION && heroImg && y < window.innerHeight * 1.2) heroImg.style.setProperty('--py', (y * 0.1).toFixed(1) + 'px');
+    const probe = (nav ? nav.offsetHeight : 70) + 90;
+    let current = null;
+    linkPairs.forEach(p => {
+      const r = p.sec.getBoundingClientRect();
+      if (r.top <= probe && r.bottom > probe) current = p.a;
+    });
+    linkPairs.forEach(p => p.a.classList.toggle('active', p.a === current));
+  }
+  function onScroll() { if (!ticking) { ticking = true; raf(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+
+  // ── eased smooth scroll for in-page anchors ──
+  let anim = null;
+  const ease = t => (t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  function stopAnim() { if (anim) { cancelAnimationFrame(anim); anim = null; } }
+  function scrollToY(target, dur) {
+    stopAnim();
+    const start = window.pageYOffset, dist = target - start;
+    if (REDUCED || Math.abs(dist) < 2) { window.scrollTo(0, target); return; }
+    dur = dur || Math.min(1400, Math.max(650, Math.abs(dist) * 0.45));
+    let t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      const p = Math.min(1, (ts - t0) / dur);
+      window.scrollTo(0, start + dist * ease(p));
+      anim = p < 1 ? raf(step) : null;
+    }
+    anim = raf(step);
+  }
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(ev => window.addEventListener(ev, stopAnim, { passive: true }));
+  if (!REDUCED) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#') { e.preventDefault(); scrollToY(0); return; }
+        const el = document.querySelector(href);
+        if (!el) return;
+        e.preventDefault();
+        const navH = nav ? nav.offsetHeight : 70;
+        scrollToY(el.getBoundingClientRect().top + window.pageYOffset - navH + 1);
+        try { history.replaceState(null, '', href); } catch (err) {}
+      });
+    });
+  }
+  const btt = document.getElementById('backToTop');
+  if (btt) btt.addEventListener('click', () => scrollToY(0, 1100));
+
+  // ── reveal system ──
+  const SETTLE_CLASSES = ['rv', 'rv-left', 'rv-right', 'rv-zoom', 'in'];
+  function settle(el, ms) {
+    setTimeout(() => {
+      el.classList.remove.apply(el.classList, SETTLE_CLASSES);
+      el.style.removeProperty('--d');
+    }, ms);
+  }
+
+  // hero entrance (after the page loader hides)
+  const heroSeq = [];
+  if (MOTION) {
+    const mark = (sel, delay, cls) => document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('rv'); if (cls) el.classList.add(cls);
+      el.style.setProperty('--d', (delay + i * 90) + 'ms');
+      heroSeq.push(el);
+    });
+    mark('.hero-badge', 80);
+    mark('.hero h1', 200);
+    mark('.hero-sub', 330);
+    mark('.hero-credentials .credential', 450);
+    mark('.hero-actions', 850);
+    let heroDone = false;
+    const runHero = () => {
+      if (heroDone) return; heroDone = true;
+      raf(() => heroSeq.forEach(el => { el.classList.add('in'); settle(el, 2600); }));
+    };
+    if (window.__pageReady) runHero();
+    else { window.addEventListener('pageReady', runHero, { once: true }); setTimeout(runHero, 3500); }
+  }
+
+  // section reveals
+  if (MOTION && 'IntersectionObserver' in window) {
+    const seen = new Set(heroSeq);
+    const targets = [];
+    const add = (sel, variant) => document.querySelectorAll(sel).forEach(el => {
+      if (seen.has(el)) return;
+      seen.add(el); el.classList.add('rv'); if (variant) el.classList.add(variant);
+      targets.push(el);
+    });
+    add('.section-header');
+    add('.about-imgs', 'rv-left');
+    add('.about-content', 'rv-right');
+    add('.conditions-grid .condition-chip');
+    add('.service-card');
+    add('.fitness-grid > div:first-child', 'rv-left');
+    add('.fitness-grid > div:last-child', 'rv-right');
+    add('.fitness-feat');
+    add('.gallery-item', 'rv-zoom');
+    add('.cert-wrap, .cert-nav');
+    add('.testi-wrap');
+    add('.strip-item');
+    add('.contact-info-card', 'rv-left');
+    add('.booking-form', 'rv-right');
+    add('.contact-item');
+    add('.footer-inner > div');
+    const io = new IntersectionObserver(entries => {
+      const vis = entries.filter(e => e.isIntersecting).sort((a, b) =>
+        (a.boundingClientRect.top - b.boundingClientRect.top) || (a.boundingClientRect.left - b.boundingClientRect.left));
+      vis.forEach((e, k) => {
+        const el = e.target; io.unobserve(el);
+        const d = Math.min(k, 6) * 90;
+        el.style.setProperty('--d', d + 'ms');
+        raf(() => el.classList.add('in'));
+        settle(el, d + 1500);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(el => io.observe(el));
+  }
+
+  // ── count-up for plain numeric stats (language-neutral, runs once) ──
+  const nums = Array.from(document.querySelectorAll('.strip-num, .stat-num'))
+    .filter(el => !el.hasAttribute('data-en') && /^\s*\d+\+?\s*$/.test(el.textContent));
+  if (MOTION && 'IntersectionObserver' in window && nums.length) {
+    nums.forEach(el => {
+      const m = el.textContent.trim().match(/^(\d+)(\+?)$/);
+      el._to = +m[1]; el._suf = m[2];
+      el.textContent = '0' + el._suf;
+    });
+    const cio = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target; cio.unobserve(el);
+        const dur = 1500; let t0 = null;
+        const step = ts => {
+          if (t0 === null) t0 = ts;
+          const p = Math.min(1, (ts - t0) / dur);
+          el.textContent = Math.round(el._to * (1 - Math.pow(1 - p, 3))) + el._suf;
+          if (p < 1) raf(step);
+        };
+        setTimeout(() => raf(step), 200);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(el => cio.observe(el));
+  }
+})();
+</script>
+</body>
+</html>
